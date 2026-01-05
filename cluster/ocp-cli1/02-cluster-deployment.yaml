@@ -1,0 +1,21 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: ocp-cli1
+  namespace: ocp-cli1
+spec:
+  baseDomain: znero.local
+  clusterName: ocp-cli1
+  pullSecretRef:
+    name: pull-secret
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: ocp-cli1-install
+    version: v1beta1
+  platform:
+    agentBareMetal:
+      agentSelector:
+        matchLabels:
+          cluster-name: ocp-cli1
+  installAttemptsLimit: 0

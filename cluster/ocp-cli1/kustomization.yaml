@@ -1,0 +1,30 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# 1. Define o namespace padrão para todos os recursos listados.
+# Isso garante que, se você esqueceu de declarar o namespace em algum arquivo,
+# o Kustomize força ele para 'ocp-cli1'.
+namespace: ocp-cli1
+
+# 2. Lista de arquivos (manifestos) que compõem este deploy.
+# A ordem aqui não dita estritamente a ordem de aplicação (o K8s gerencia dependências),
+# mas é boa prática listar logicamente.
+resources:
+- 01-namespace.yaml
+- 02-cluster-deployment.yaml
+- 03-agent-cluster-install.yaml
+- 04-infra-env.yaml
+- 05-nmstate-configs.yaml
+- 06-baremetal-hosts.yaml
+# - 00-secrets.yaml  <-- Descomente se você tiver o arquivo de secrets gerado (ex: SealedSecret)
+
+# 3. (Opcional mas Recomendado) Adiciona labels comuns a TODOS os objetos.
+# Isso ajuda muito na hora de filtrar no console do OpenShift ou via 'oc get -l'.
+commonLabels:
+  app: ztp-cluster-install
+  cluster-name: ocp-cli1
+  site: site-cliente-1 # Exemplo de metadados geográficos
+
+# 4. (Opcional) Geradores de ConfigMap ou Secret simples, se necessário.
+# generatorOptions:
+#   disableNameSuffixHash: true

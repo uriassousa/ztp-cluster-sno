@@ -1,0 +1,53 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: master-0
+  namespace: ocp-cli1
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "ocp-host1"
+  labels:
+    infraenvs.agent-install.openshift.io: "ocp-cli1"
+spec:
+  online: true
+  bootMACAddress: "00:50:56:b3:82:6e"
+  bmc:
+    address: ipmi://192.168.31.82:6231
+    credentialsName: bmh-secret
+    disableCertificateVerification: true
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: master-1
+  namespace: ocp-cli1
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "ocp-host2"
+  labels:
+    infraenvs.agent-install.openshift.io: "ocp-cli1"
+spec:
+  online: true
+  bootMACAddress: "00:50:56:b3:02:17"
+  bmc:
+    address: ipmi://192.168.31.82:6232
+    credentialsName: bmh-secret
+    disableCertificateVerification: true
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: master-2
+  namespace: ocp-cli1
+  annotations:
+    inspect.metal3.io: disabled
+    bmac.agent-install.openshift.io/hostname: "ocp-host3"
+  labels:
+    infraenvs.agent-install.openshift.io: "ocp-cli1"
+spec:
+  online: true
+  bootMACAddress: "00:50:56:b3:ab:b8"
+  bmc:
+    address: ipmi://192.168.31.82:6233
+    credentialsName: bmh-secret
+    disableCertificateVerification: true
