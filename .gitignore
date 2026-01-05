@@ -1,0 +1,62 @@
+# --- Sistema Operacional (macOS) ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# --- Sistema Operacional (Windows - caso colabore com outros) ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- IDE / Editor (VS Code) ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# --- OpenShift / Kubernetes ---
+# Arquivos de autenticação gerados
+auth/
+*.kubeconfig
+kubeconfig
+.kube/
+
+# Imagens ISO (Geradas pelo InfraEnv - NÃO suba isso!)
+*.iso
+*.img
+*.qcow2
+
+# Logs de debug e crash
+*.log
+openshift_install_log-*
+
+# --- Segredos e Chaves (CRÍTICO) ---
+# Chaves SSH privadas e públicas
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.pem
+*.key
+
+# Arquivos contendo Pull Secrets ou credenciais
+pull-secret.txt
+pull-secret.json
+pull-secret.yaml
+*secret*
+!0*-*.yaml  # Exceção: Não ignora seus arquivos de manifesto se tiverem "secret" no nome (cuidado aqui!)
+
+# --- Terraform (Se usar para provisionar algo antes) ---
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# --- Diversos ---
+tmp/
+temp/
+*~
