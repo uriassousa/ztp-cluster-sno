@@ -10,7 +10,7 @@ metadata:
     infraenvs.agent-install.openshift.io: "ocp-cli1"
 spec:
   #online: false
-  # bootMACAddress: "00:50:56:b3:ab:b8"
+  bootMACAddress: "00:50:56:b3:ab:b8"
   # bmc:
   #  address: ipmi://192.168.31.82:6233
   #  credentialsName: bmh-secret
