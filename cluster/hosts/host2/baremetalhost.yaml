@@ -16,4 +16,3 @@ spec:
   #  credentialsName: bmh-secret
   #  disableCertificateVerification: true
 externallyProvisioned: true
-automatedCleaningMode: disabled
