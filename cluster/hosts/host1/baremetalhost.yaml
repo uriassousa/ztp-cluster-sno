@@ -15,6 +15,6 @@ spec:
   automatedCleaningMode: disabled
 
   bmc:
-    address: redfish-virtualmedia+http://192.168.31.82:8000/redfish/v1/Systems/85775665-c110-4b85-8989-e6162170b3ec
+    address: redfish-virtualmedia+http://192.168.31.82:8000/redfish/v1/Systems/bmh-ocp1
     credentialsName: bmh-secret
     disableCertificateVerification: true
