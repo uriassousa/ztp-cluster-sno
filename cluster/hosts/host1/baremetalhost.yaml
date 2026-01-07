@@ -9,19 +9,12 @@ metadata:
   labels:
     infraenvs.agent-install.openshift.io: "sno-cluster2"
 spec:
-  # online: false
   bootMACAddress: "00:50:56:b3:82:6e"
-  # bmc:
-  #  address: ipmi://192.168.31.82:6231
-  #  credentialsName: bmh-secret
-  #  disableCertificateVerification: true
-  #externallyProvisioned: true
-  #automatedCleaningMode: disabled
   online: true
   externallyProvisioned: false
   automatedCleaningMode: disabled
 
   bmc:
-    address: redfish-virtualmedia://192.168.31.82:8000/redfish/v1/Systems/85775665-c110-4b85-8989-e6162170b3ec
+    address: redfish-virtualmedia+http://192.168.31.82:8000/redfish/v1/Systems/85775665-c110-4b85-8989-e6162170b3ec
     credentialsName: bmh-secret
     disableCertificateVerification: true
