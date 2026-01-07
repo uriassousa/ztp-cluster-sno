@@ -2,13 +2,13 @@ apiVersion: agent-install.openshift.io/v1beta1
 kind: NMStateConfig
 metadata:
   name: master-0-network
-  namespace: ocp-cli1
+  namespace: assisted-installer
   labels:
-    cluster-name: ocp-cli1
+    cluster-name: sno-cluster2
 spec:
   config:
     hostname:
-      config: ocp-host1
+      config: sno-host02
     interfaces:
     - name: uplink1
       type: ethernet
@@ -25,7 +25,7 @@ spec:
         enabled: true
         dhcp: false
         address:
-        - ip: 192.168.31.85
+        - ip: 192.168.31.28
           prefix-length: 24
       link-aggregation:
         mode: active-backup

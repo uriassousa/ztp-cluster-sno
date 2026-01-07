@@ -2,12 +2,12 @@ apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
   name: master-0
-  namespace: ocp-cli1
+  namespace: assisted-installer
   annotations:
     inspect.metal3.io: disabled
-    bmac.agent-install.openshift.io/hostname: "ocp-host1"
+    bmac.agent-install.openshift.io/hostname: "sno-host02"
   labels:
-    infraenvs.agent-install.openshift.io: "ocp-cli1"
+    infraenvs.agent-install.openshift.io: "sno-cluster2"
 spec:
   # online: false
   bootMACAddress: "00:50:56:b3:82:6e"
